@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+}
+
+group 'ru.netology'
+version '1.0-SNAPSHOT'
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.5.1'
+    testImplementation 'com.codeborne:selenide:5.3.1'
+    testImplementation 'mysql:mysql-connector-java:8.0.22'
+    testImplementation 'postgresql:postgresql:9.0-801.jdbc4'
+    testImplementation 'commons-dbutils:commons-dbutils:1.7'
+    testImplementation 'io.rest-assured:rest-assured:4.2.0'
+    testImplementation 'com.google.code.gson:gson:2.8.6'
+    testImplementation 'io.qameta.allure:allure-selenide:2.13.0'
+    testImplementation 'com.github.javafaker:javafaker:1.0.2'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging.showStandardStreams = true
+    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+    systemProperty 'junit.jupiter.extensions.autodetection.enabled', true
+    systemProperty 'url', System.getProperty('url')
+    systemProperty 'username', System.getProperty('username', 'app')
+    systemProperty 'password', System.getProperty('password', 'pass')
+    systemProperty 'sut.url', System.getProperty('sut.url', "http://localhost:8080/")
+}
