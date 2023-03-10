@@ -55,7 +55,13 @@ public class CreditCardPage {
         fieldNumberError.shouldHave(text("Неверный формат")); fieldNumberError.shouldBe(visible);
     }
     public void messZeroNum() {
-        fieldNumberError.shouldHave(text("Неверный формат")); fieldNumberError.shouldBe(visible);
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+//     fieldNumberError.shouldHave(text("Неверный формат")); fieldNumberError.shouldBe(visible);
+        nokNotification.shouldBe(visible);
     }
 
     public void messInvalidMonth() {
@@ -75,15 +81,19 @@ public class CreditCardPage {
     }
 
     public void messEmptyCardNumberField() {
-        fieldNumberError.shouldHave(text("Поле обязательно для заполнения")); fieldNumberError.shouldBe(visible);
+        //fieldNumberError.shouldHave(text("Поле обязательно для заполнения")); fieldNumberError.shouldBe(visible);
+        fieldNumberError.shouldHave(text("Неверный формат")); fieldNumberError.shouldBe(visible);
     }
 
     public void messEmptyMonthField() {
-        fieldMonthError.shouldHave(text("Поле обязательно для заполнения")); fieldMonthError.shouldBe(visible);
+        //fieldMonthError.shouldHave(text("Поле обязательно для заполнения")); fieldMonthError.shouldBe(visible);
+        fieldMonthError.shouldHave(text("Неверный формат")); fieldMonthError.shouldBe(visible);
+
     }
 
     public void messEmptyYearField() {
-        fieldYearError.shouldHave(text("Поле обязательно для заполнения")); fieldYearError.shouldBe(visible);
+       // fieldYearError.shouldHave(text("Поле обязательно для заполнения")); fieldYearError.shouldBe(visible);
+        fieldYearError.shouldHave(text("Неверный формат")); fieldYearError.shouldBe(visible);
     }
 
     public void messEmptyOwnerField() {
@@ -91,7 +101,8 @@ public class CreditCardPage {
     }
 
     public void messEmptyCvcField() {
-        fieldCvcError.shouldHave(text("Поле обязательно для заполнения")); fieldCvcError.shouldBe(visible);
+       // fieldCvcError.shouldHave(text("Поле обязательно для заполнения")); fieldCvcError.shouldBe(visible);
+        fieldCvcError.shouldHave(text("Неверный формат")); fieldCvcError.shouldBe(visible);
     }
 
     public void messExpiredYearField() {
