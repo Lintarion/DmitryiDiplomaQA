@@ -34,7 +34,7 @@ public class DebitCardTest {
         SqlHelper.cleanDataBase();
     }
 
-    @Test
+    @Test // не проходит/ при ручном тестировании все Ок - программная ошибка
     @DisplayName("Оплата по одобренной дебитовой карте")
     void shouldPayByAppDC() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -45,7 +45,7 @@ public class DebitCardTest {
         assertEquals("APPROVED", paymentStatus);
     }
 
-    @Test
+    @Test //Форма выдает сообщение об успешной оплате по дебитовой/кредитной карте со статусом Declined -Баг
     @DisplayName("Оплата по отклоненной дебитовой карте")
     void shouldPayNotByDecDC() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -56,7 +56,7 @@ public class DebitCardTest {
         assertEquals("DECLINED", paymentStatus);
     }
 
-    @Test
+    @Test // тест проходит - Ок
     @DisplayName("Оплата по дебитовой карте с невалидным номером")
     void shouldNotPayByInvNum() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -65,7 +65,7 @@ public class DebitCardTest {
         debitCardPage.messInvalidCardNumber();
     }
 
-    @Test
+    @Test // тест прошел - Ок
     @DisplayName("Оплата по дебитовой карте с неполным номером")
     void shouldErrorNotFullNum() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -74,7 +74,7 @@ public class DebitCardTest {
         debitCardPage.messErrorNum();
     }
 
-    @Test
+    @Test // тест прошел - Ок
     @DisplayName("Оплата по дебитовой карте с невалидным месяцем")
     void shouldErrorInvalidMonth() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -83,7 +83,7 @@ public class DebitCardTest {
         debitCardPage.messInvalidMonth();
     }
 
-    @Test
+    @Test // тест прошел - Ок
     @DisplayName("Оплата по дебитовой карте с указанием истекшего месяца")
     void shouldErrorExpiredMonth() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -92,7 +92,7 @@ public class DebitCardTest {
         debitCardPage.messExpiredMonth();
     }
 
-    @Test
+    @Test // тест прошел - Ок
     @DisplayName("Оплата по дебитовой карте с указанием истекшего года")
     void shouldErrorExpiredYear() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -101,7 +101,7 @@ public class DebitCardTest {
         debitCardPage.messExpiredYearField();
     }
 
-    @Test
+    @Test // тест упал!!! //Форма не выдает ошибку при вводе невалидных значений в поле Владелец - Баг
     @DisplayName("Оплата по дебитовой карте с указанием невалидных значений в поле Владелец")
     void shouldErrorInvalidOwner() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -110,7 +110,7 @@ public class DebitCardTest {
         debitCardPage.messInvalidOwner();
     }
 
-    @Test
+    @Test // тест прошел - Ок
     @DisplayName("Оплата по дебитовой карте с указанием невалидных значений в поле Cvc")
     void shouldErrorCvc() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -119,8 +119,8 @@ public class DebitCardTest {
         debitCardPage.messInvalidCvc();
     }
 
-    @Test
-    @DisplayName("Отравка пустой формы")
+    @Test // тест прошел - Ок
+    @DisplayName("Отправка пустой формы")
     void shouldNotSendEmptyForm() {
         val debitCardPage = dashboardPage.payByDebitCard();
         val emptyForm = DataHelper.getEmptyCardInfo();
@@ -132,7 +132,7 @@ public class DebitCardTest {
         debitCardPage.messEmptyCvcField();
     }
 
-    @Test
+    @Test // тест прошел - Ок
     @DisplayName("Оплата по дебитовой карте с пустым полем Номер карты")
     void shouldErrorEmptyCardNum() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -141,7 +141,7 @@ public class DebitCardTest {
         debitCardPage.messEmptyCardNumberField();
     }
 
-    @Test
+    @Test // тест прошел - Ок
     @DisplayName("Оплата по дебитовой карте с пустым полем Месяц")
     void shouldErrorEmptyMonth() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -149,7 +149,7 @@ public class DebitCardTest {
         debitCardPage.cardInfo(emptyMonth);
         debitCardPage.messEmptyMonthField();
     }
-    @Test
+    @Test // тест прошел - Ок
     @DisplayName("Оплата по дебитовой карте с пустым полем Год")
     void shouldErrorEmptyYear() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -157,7 +157,7 @@ public class DebitCardTest {
         debitCardPage.cardInfo(emptyYear);
         debitCardPage.messEmptyYearField();
     }
-    @Test
+    @Test// тест прошел - Ок
     @DisplayName("Оплата по дебитовой карте с пустым полем Владелец")
     void shouldErrorEmptyOwner() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -165,7 +165,7 @@ public class DebitCardTest {
         debitCardPage.cardInfo(emptyOwner);
         debitCardPage.messEmptyOwnerField();
     }
-    @Test
+    @Test // тест прошел - Ок
     @DisplayName("Оплата по дебитовой карте с пустым полем Cvc")
     void shouldErrorEmptyCvc() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -173,7 +173,7 @@ public class DebitCardTest {
         debitCardPage.cardInfo(emptyCvc);
         debitCardPage.messEmptyCvcField();
     }
-    @Test
+    @Test // тест упал - Форма не выдает сообщение об ошибке при вводе невалидных значений в поле CVC- Баг
     @DisplayName("Оплата по дебитовой карте с вводом 000 в поле Cvc")
     void shouldErrorZeroCvc() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -181,7 +181,7 @@ public class DebitCardTest {
         debitCardPage.cardInfo(zeroCvc);
         debitCardPage.messInvalidCvc();
     }
-    @Test
+    @Test //тест прошел -Ок -- нотификацию поправил
     @DisplayName("Оплата по дебитовой карте с вводом 0 в поле Номер карты")
     void shouldErrorZeroCardNum() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -189,7 +189,7 @@ public class DebitCardTest {
         debitCardPage.cardInfo(zeroCardNum);
         debitCardPage.messZeroNum();
     }
-    @Test
+    @Test // тест прошел
     @DisplayName("Оплата по дебитовой карте с вводом 0 в поле Месяц")
     void shouldErrorZeroMonth() {
         val debitCardPage = dashboardPage.payByDebitCard();
@@ -197,7 +197,7 @@ public class DebitCardTest {
         debitCardPage.cardInfo(zeroMonth);
         debitCardPage.messInvalidMonth();
     }
-    @Test
+    @Test // тест прошел
     @DisplayName("Оплата по дебитовой карте с вводом 0 в поле Год")
     void shouldErrorZeroYear() {
         val debitCardPage = dashboardPage.payByDebitCard();
