@@ -37,6 +37,8 @@ public class CreditCardTest {
     @Test // тест упал
     @DisplayName("Оплата по одобренной кредитной карте")
     void shouldPayByAppDC() {
+        System.setProperty("url", "jdbc:postgresql://localhost:5432/app"); // url - ключ (назв переменной), значение переменной (jdbc)
+       // System.setProperty("url", "jdbc:mysql://localhost:3306/app");
         val creditCardPage = dashboardPage.payByCreditCard();
         val approvedCardInformation = DataHelper.getApprovedCardInfo();
         creditCardPage.cardInfo(approvedCardInformation);

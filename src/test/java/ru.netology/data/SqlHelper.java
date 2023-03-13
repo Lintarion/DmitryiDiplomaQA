@@ -13,13 +13,15 @@ public class SqlHelper {
 
     public static Connection getConn() throws SQLException {
         String url = System.getProperty("url");
+       // String url = "jdbc:postgresql://localhost:5432/app";
         String username = System.getProperty("username");
         String password = System.getProperty("password");
 
         try {
             return DriverManager.getConnection(url, username, password);
         } catch (SQLException err) {
-            err.printStackTrace();
+            //System.out.println("йцуке");
+            err.printStackTrace(); // java.sql.SQLException: No suitable driver found for  -
         }
         return null;
     }
@@ -65,6 +67,7 @@ public class SqlHelper {
                 return resultSet.getString("status");
             }
         } catch (SQLException err) {
+            System.out.println("Не получилось подключиться к базе данных");
             err.printStackTrace();
         }
         return null;

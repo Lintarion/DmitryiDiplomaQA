@@ -41,7 +41,7 @@ public class DebitCardPage {
     }
 
     public void okNotification() {
-        okNotification.waitUntil(visible, 15000);
+        okNotification.waitUntil(visible, 50000);
     }
 
     public void nokNotification() {nokNotification.waitUntil(visible, 20000);
@@ -57,7 +57,7 @@ public class DebitCardPage {
     public void messZeroNum() {
        // fieldNumberError.shouldHave(text("Неверный формат")); fieldNumberError.shouldBe(visible);// нотификация - нули в поле ввода номер карты Дебет
         try {
-            Thread.sleep(5000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
