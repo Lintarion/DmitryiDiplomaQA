@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bb0faca6-8094-42b7-9e4c-530b47715107" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/data/SqlHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/data/SqlHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/page/CreditCardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/page/CreditCardPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/page/DebitCardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/page/DebitCardPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/test/CreditCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/test/CreditCardTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/test/DebitCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/test/DebitCardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,16 +83,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Gradle.CreditCardTest">
+}</component>
+  <component name="RunManager" selected="Gradle.CreditCardTest.shouldPayByAppDC">
     <configuration name="CreditCardTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -212,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CreditCardTest.shouldPayByAppDC" />
+        <item itemvalue="Gradle.MyDiplomDmitry [clean]" />
         <item itemvalue="Gradle.CreditCardTest" />
         <item itemvalue="Gradle.DebitCardTest" />
         <item itemvalue="Gradle.DebitCardTest.shouldPayByAppDC" />
-        <item itemvalue="Gradle.CreditCardTest.shouldPayByAppDC" />
-        <item itemvalue="Gradle.MyDiplomDmitry [clean]" />
       </list>
     </recent_temporary>
   </component>
