@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="bb0faca6-8094-42b7-9e4c-530b47715107" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/test/CreditCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/test/CreditCardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Plan.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Plan.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/data/DataGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/data/DataGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +93,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.CreditCardTest.shouldPayByAppDC">
+  <component name="RunManager" selected="Gradle.CreditCardTest.shouldNotPayByInvNum">
     <configuration name="CreditCardTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -107,6 +108,29 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;ru.netology.test.CreditCardTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CreditCardTest.shouldNotPayByInvNum" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.netology.test.CreditCardTest.shouldNotPayByInvNum&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -162,29 +186,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="DebitCardTest.shouldPayByAppDC" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;ru.netology.test.DebitCardTest.shouldPayByAppDC&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="MyDiplomDmitry [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -208,11 +209,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CreditCardTest.shouldNotPayByInvNum" />
         <item itemvalue="Gradle.CreditCardTest.shouldPayByAppDC" />
         <item itemvalue="Gradle.MyDiplomDmitry [clean]" />
         <item itemvalue="Gradle.CreditCardTest" />
         <item itemvalue="Gradle.DebitCardTest" />
-        <item itemvalue="Gradle.DebitCardTest.shouldPayByAppDC" />
       </list>
     </recent_temporary>
   </component>
@@ -240,5 +241,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MyDiplomDmitry$CreditCardTest_shouldPayByAppDC.ic" NAME="CreditCardTest.shouldPayByAppDC Coverage Results" MODIFIED="1679059585540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

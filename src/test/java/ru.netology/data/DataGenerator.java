@@ -65,12 +65,12 @@ public class DataGenerator {
         return new Year(yearFormatter.format(currentYear));
     }
 
-    protected Year getValidExpirationDate() {
+    protected Year getValidExpirationDate() {// действительный срок действия карты
         LocalDate newYear = today.plusYears(1);
         return new Year(yearFormatter.format(newYear));
     }
 
-    protected Year getExpiredYear() {
+    protected Year getExpiredYear() { //получить просроченный год
         LocalDate newYear = today.minusYears(1);
         return new Year(yearFormatter.format(newYear));
     }
