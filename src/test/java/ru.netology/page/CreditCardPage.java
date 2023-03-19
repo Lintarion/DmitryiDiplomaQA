@@ -16,7 +16,9 @@ public class CreditCardPage {
     private SelenideElement fieldNumber = $("[placeholder='0000 0000 0000 0000']");
     private SelenideElement fieldMonth = $("[placeholder='08']");
     private SelenideElement fieldYear = $("[placeholder='22']");
-    private SelenideElement fieldOwner = $(byText("Владелец")).parent().$(".input__control");;
+    private SelenideElement fieldOwner = $(byText("Владелец")).parent().$(".input__control");
+    //public SelenideElement fieldOwner2 = $(byText("Владелец")).parent();// копия///////////////////////
+    //public SelenideElement fieldOwner3 = $(byText("Владелец"));// копия///////////////////////
     private SelenideElement fieldCVC = $("[placeholder='999']");
     private SelenideElement continueButton = $$(".button").find(exactText("Продолжить"));
 
@@ -56,7 +58,7 @@ public class CreditCardPage {
     }
     public void messZeroNum() {
         try {
-            Thread.sleep(10000);
+            Thread.sleep(15000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

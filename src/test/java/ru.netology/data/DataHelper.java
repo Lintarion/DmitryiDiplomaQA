@@ -64,8 +64,8 @@ public class DataHelper {
         }
 
         public static CardInfo getEmptyCardInfo() {
-            return new CardInfo(" ", " ", " ", " ", " ");
-        }
+        return new CardInfo(" ", " ", " ", " ", " ");
+        };
 
         public static CardInfo getEmptyCardNumber() {
             return new CardInfo(" ", dataGenerator.getCurrentYear().getYear(), dataGenerator.getValidMonth().getMonth(), DataGenerator.getValidOwner(), DataGenerator.getValidCvc());

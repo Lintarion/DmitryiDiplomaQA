@@ -7,7 +7,11 @@
     <list default="true" id="bb0faca6-8094-42b7-9e4c-530b47715107" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/Plan.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Plan.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/data/DataGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/data/DataGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/data/DataHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/data/DataHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/page/CreditCardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/page/CreditCardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/page/DebitCardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/page/DebitCardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/test/CreditCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/test/CreditCardTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ru.netology/test/DebitCardTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ru.netology/test/DebitCardTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +80,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2MhEHOhI67TKVTIz8VgUMujUCXC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -93,7 +100,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.CreditCardTest.shouldNotPayByInvNum">
+  <component name="RunManager" selected="Gradle.CreditCardTest.shouldErrorZeroCardNum">
     <configuration name="CreditCardTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -117,7 +124,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="CreditCardTest.shouldNotPayByInvNum" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CreditCardTest.shouldErrorZeroCardNum" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -130,7 +137,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;ru.netology.test.CreditCardTest.shouldNotPayByInvNum&quot;" />
+            <option value="&quot;ru.netology.test.CreditCardTest.shouldErrorZeroCardNum&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -186,34 +193,36 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="MyDiplomDmitry [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="DebitCardTest.shouldErrorZeroCardNum" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;ru.netology.test.DebitCardTest.shouldErrorZeroCardNum&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.CreditCardTest.shouldNotPayByInvNum" />
-        <item itemvalue="Gradle.CreditCardTest.shouldPayByAppDC" />
-        <item itemvalue="Gradle.MyDiplomDmitry [clean]" />
+        <item itemvalue="Gradle.CreditCardTest.shouldErrorZeroCardNum" />
         <item itemvalue="Gradle.CreditCardTest" />
+        <item itemvalue="Gradle.DebitCardTest.shouldErrorZeroCardNum" />
         <item itemvalue="Gradle.DebitCardTest" />
+        <item itemvalue="Gradle.CreditCardTest.shouldPayByAppDC" />
       </list>
     </recent_temporary>
   </component>
@@ -241,6 +250,32 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru.netology/test/DebitCardTest.java</url>
+          <line>143</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru.netology/test/DebitCardTest.java</url>
+          <line>136</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru.netology/test/DebitCardTest.java</url>
+          <line>185</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/ru.netology/test/DebitCardTest.java</url>
+          <line>192</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/MyDiplomDmitry$CreditCardTest_shouldPayByAppDC.ic" NAME="CreditCardTest.shouldPayByAppDC Coverage Results" MODIFIED="1679059585540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

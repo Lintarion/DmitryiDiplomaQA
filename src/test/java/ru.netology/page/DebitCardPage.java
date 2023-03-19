@@ -57,7 +57,7 @@ public class DebitCardPage {
     public void messZeroNum() {
        // fieldNumberError.shouldHave(text("Неверный формат")); fieldNumberError.shouldBe(visible);// нотификация - нули в поле ввода номер карты Дебет
         try {
-            Thread.sleep(10000);
+            Thread.sleep(15000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

@@ -34,21 +34,22 @@ public class CreditCardTest {
         SqlHelper.cleanDataBase();
     }
 
-    @Test // тест упал
-    @DisplayName("Оплата по одобренной кредитной карте")
+    @Test // Тест - ок/ нужно менять строку с БД
+    @DisplayName("2. Покупка по одобренной кредитной карте (Статус Approved)")
     void shouldPayByAppDC() {
        // System.setProperty("url", "jdbc:postgresql://localhost:5432/app"); // url - ключ (имя переменной), "jdbc..../app"- значение переменной
         System.setProperty("url", "jdbc:mysql://localhost:3306/app");
         val creditCardPage = dashboardPage.payByCreditCard();
         val approvedCardInformation = DataHelper.getApprovedCardInfo();
+        //System.out.println(approvedCardInformation.);
         creditCardPage.cardInfo(approvedCardInformation);
         creditCardPage.okNotification();
         val paymentStatus = SqlHelper.getCreditEntity();
         assertEquals("APPROVED", paymentStatus);
     }
 
-    @Test // тест упал// //Форма выдает сообщение об успешной оплате по дебитовой/кредитной карте со статусом Declined -Баг
-    @DisplayName("Оплата по отклоненной кредитной карте")
+    @Test // тест упал //Форма выдает сообщение об успешной оплате по дебитовой/кредитной карте со статусом Declined -Баг
+    @DisplayName("4. Покупка по отклоненной кредитной карте (Статус Declined)")
     void shouldPayNotByDecDC() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val declinedCardInformation = DataHelper.getDeclinedCardInfo();
@@ -59,7 +60,7 @@ public class CreditCardTest {
     }
 
     @Test // Тест прошел -Ок
-    @DisplayName("Оплата по кредитной карте с невалидным номером")
+    @DisplayName("6. Покупка по кредитной карте с невалидным номером")
     void shouldNotPayByInvNum() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val invalidCardInformation = DataHelper.getInvalidCardInfo();
@@ -68,7 +69,7 @@ public class CreditCardTest {
     }
 
     @Test // Тест прошел -Ок
-    @DisplayName("Оплата по кредитной карте с неполным номером")
+    @DisplayName("8. Покупка по кредитной карте с неполным номером")
     void shouldErrorNotFullNum() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val notFullCardInformation = DataHelper.getNotFullCardInfo();
@@ -77,7 +78,7 @@ public class CreditCardTest {
     }
 
     @Test // Тест прошел -Ок
-    @DisplayName("Оплата по кредитной карте с невалидным месяцем")
+    @DisplayName("10. Покупка по кредитной карте с указанием невалидного месяца")
     void shouldErrorInvalidMonth() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val invalidMonthCardInformation = DataHelper.getInvalidMonthCardInfo();
@@ -86,7 +87,7 @@ public class CreditCardTest {
     }
 
     @Test // Тест прошел -Ок
-    @DisplayName("Оплата по кредитной карте с указанием истекшего месяца")
+    @DisplayName("12. Покупка по кредитной карте с указанием истекшего месяца")
     void shouldErrorExpiredMonth() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val expiredMonthCardInformation = DataHelper.getExpiredMonthCardInfo();
@@ -95,7 +96,7 @@ public class CreditCardTest {
     }
 
     @Test // Тест прошел -Ок
-    @DisplayName("Оплата по кредитной карте с указанием истекшего года")
+    @DisplayName("14. Покупка по кредитной карте с указанием истекшего года")
     void shouldErrorExpiredYear() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val expiredYearCardInformation = DataHelper.getExpiredYearCardInfo();
@@ -104,7 +105,7 @@ public class CreditCardTest {
     }
 
     @Test // тест упал ---- /Форма не выдает ошибку при вводе невалидных значений в поле Владелец - Баг
-    @DisplayName("Оплата по кредитной карте с указанием невалидных значений в поле Владелец")
+    @DisplayName("16. Покупка по кредитной карте с указанием невалидных значений в поле Владелец")
     void shouldErrorInvalidOwner() {
         val creditCardPage = dashboardPage.payByCreditCard();;
         val invalidOwner = DataHelper.getInvalidOwnerCard();
@@ -113,7 +114,7 @@ public class CreditCardTest {
     }
 
     @Test // Тест прошел -Ок
-    @DisplayName("Оплата по кредитной карте с указанием невалидных значений в поле Cvc")
+    @DisplayName("18. Покупка по кредитной карте с неполным вводом в поле CVC/CVV")
     void shouldErrorCvc() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val invalidCvc = DataHelper.getInvalidCvc();
@@ -122,7 +123,7 @@ public class CreditCardTest {
     }
 
     @Test // Тест прошел -Ок
-    @DisplayName("Отравка пустой формы")
+    @DisplayName("20. Пустая форма заявки для покупки по кредитной карте")
     void shouldNotSendEmptyForm() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val emptyForm = DataHelper.getEmptyCardInfo();
@@ -135,7 +136,7 @@ public class CreditCardTest {
     }
 
     @Test // Тест прошел -Ок
-    @DisplayName("Оплата по кредитной карте с пустым полем Номер карты")
+    @DisplayName("22. Покупка по кредитной карте с пустым полем Номер карты")
     void shouldErrorEmptyCardNum() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val emptyCardNum = DataHelper.getEmptyCardNumber();
@@ -144,7 +145,7 @@ public class CreditCardTest {
     }
 
     @Test // Тест прошел -Ок
-    @DisplayName("Оплата по кредитной карте с пустым полем Месяц")
+    @DisplayName("24. Покупка по кредитной карте с пустым полем Месяц")
     void shouldErrorEmptyMonth() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val emptyMonth = DataHelper.getEmptyMonth();
@@ -152,7 +153,7 @@ public class CreditCardTest {
         creditCardPage.messEmptyMonthField();
     }
     @Test // Тест прошел -Ок
-    @DisplayName("Оплата по кредитной карте с пустым полем Год")
+    @DisplayName("26. Покупка по кредитной карте с пустым полем Год")
     void shouldErrorEmptyYear() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val emptyYear = DataHelper.getEmptyYear();
@@ -160,7 +161,7 @@ public class CreditCardTest {
         creditCardPage.messEmptyYearField();
     }
     @Test // Тест прошел -Ок
-    @DisplayName("Оплата по кредитной карте с пустым полем Владелец")
+    @DisplayName("28. Покупка по кредитной карте с пустым полем Владелец")
     void shouldErrorEmptyOwner() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val emptyOwner = DataHelper.getEmptyOwner();
@@ -168,7 +169,7 @@ public class CreditCardTest {
         creditCardPage.messEmptyOwnerField();
     }
     @Test // Тест прошел -Ок
-    @DisplayName("Оплата по кредитной карте с пустым полем Cvc")
+    @DisplayName("30. Покупка по кредитной карте с пустым полем Cvc")
     void shouldErrorEmptyCvc() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val emptyCvc = DataHelper.getEmptyCvc();
@@ -176,7 +177,7 @@ public class CreditCardTest {
         creditCardPage.messEmptyCvcField();
     }
     @Test // тест упал - - Форма не выдает сообщение об ошибке при вводе невалидных значений в поле CVC- Баг
-    @DisplayName("Оплата по кредитной карте с вводом 000 в поле Cvc")
+    @DisplayName("32. Покупка по кредитной карте с вводом 000 в поле Cvc")
     void shouldErrorZeroCvc() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val zeroCvc = DataHelper.getZeroCvc();
@@ -184,7 +185,7 @@ public class CreditCardTest {
         creditCardPage.messInvalidCvc();
     }
     @Test // Тест прошел локально, но не прошел при массовом запуске  - ВОПРОС
-    @DisplayName("Оплата по кредитной карте с вводом 0 в поле Номер карты")
+    @DisplayName("34. Покупка по кредитной карте с вводом 0 в поле Номер карты")
     void shouldErrorZeroCardNum() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val zeroCardNum = DataHelper.getCardZeroNumber();
@@ -192,7 +193,7 @@ public class CreditCardTest {
         creditCardPage.messZeroNum();
     }
     @Test // Тест прошел -Ок
-    @DisplayName("Оплата по кредитной карте с вводом 0 в поле Месяц")
+    @DisplayName("36. Покупка по кредитной карте с вводом 0 в поле Месяц")
     void shouldErrorZeroMonth() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val zeroMonth = DataHelper.getZeroMonthCardInfo();
@@ -200,7 +201,7 @@ public class CreditCardTest {
         creditCardPage.messInvalidMonth();
     }
     @Test // Тест прошел -Ок
-    @DisplayName("Оплата по кредитной карте с вводом 0 в поле Год")
+    @DisplayName("38. Покупка по кредитной карте с вводом 0 в поле Год")
     void shouldErrorZeroYear() {
         val creditCardPage = dashboardPage.payByCreditCard();
         val zeroYear = DataHelper.getZeroYearCardInformation();
